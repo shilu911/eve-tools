@@ -1,11 +1,13 @@
 package com.lushidea.evetools.infrastructure.entity;
 
+import lombok.ToString;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "ship")
+@ToString
 public class Ship extends BaseEntity {
     @Id
     private Long id;
@@ -19,7 +21,7 @@ public class Ship extends BaseEntity {
     private Group group;
 
     @Column(name = "tech_level")
-    private int techLevel;
+    private Integer techLevel;
 
     @Column(name = "enabled")
     private boolean enabled;
@@ -51,11 +53,11 @@ public class Ship extends BaseEntity {
         this.group = group;
     }
 
-    public int getTechLevel() {
+    public Integer getTechLevel() {
         return techLevel;
     }
 
-    public void setTechLevel(int techLevel) {
+    public void setTechLevel(Integer techLevel) {
         this.techLevel = techLevel;
     }
 

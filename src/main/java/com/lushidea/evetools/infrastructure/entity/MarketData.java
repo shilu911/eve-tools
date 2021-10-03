@@ -1,25 +1,30 @@
 package com.lushidea.evetools.infrastructure.entity;
 
+import lombok.Getter;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Getter
 @Entity
 @Table(name = "market_data")
+@ToString
 public class MarketData extends BaseEntity {
     @EmbeddedId
     private MarketDataPK marketDataPK;
 
     @Column
-    private long sell;
+    private Long sell;
 
     @Column
-    private long buy;
+    private Long buy;
 
     @Column(name = "lowest_sell")
-    private long lowestSell;
+    private Long lowestSell;
 
     @Column(name = "highest_buy")
-    private long highestBuy;
+    private Long highestBuy;
 
     @Embeddable
     static public class MarketDataPK implements Serializable {

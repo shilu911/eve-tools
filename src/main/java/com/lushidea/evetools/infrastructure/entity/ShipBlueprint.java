@@ -16,17 +16,17 @@ public class ShipBlueprint extends BaseEntity {
     private Label label;
 
     @OneToOne
-    @JoinColumn(name = "product")
+    @JoinColumn(name = "product", referencedColumnName = "id", nullable = false)
     private Ship ship;
 
     @Column(name = "tech_level")
-    private int techLevel;
+    private Integer techLevel;
 
     @Column(name = "build_cost")
-    private long buildCost;
+    private Long buildCost;
 
     @Column(name = "build_time")
-    private long buildTime;
+    private Long buildTime;
 
     @Column(columnDefinition = "json", name = "materials")
     @Type( type = "json" )
@@ -56,27 +56,27 @@ public class ShipBlueprint extends BaseEntity {
         this.ship = ship;
     }
 
-    public int getTechLevel() {
+    public Integer getTechLevel() {
         return techLevel;
     }
 
-    public void setTechLevel(int techLevel) {
+    public void setTechLevel(Integer techLevel) {
         this.techLevel = techLevel;
     }
 
-    public long getBuildCost() {
+    public Long getBuildCost() {
         return buildCost;
     }
 
-    public void setBuildCost(long buildCost) {
+    public void setBuildCost(Long buildCost) {
         this.buildCost = buildCost;
     }
 
-    public long getBuildTime() {
+    public Long getBuildTime() {
         return buildTime;
     }
 
-    public void setBuildTime(long buildTime) {
+    public void setBuildTime(Long buildTime) {
         this.buildTime = buildTime;
     }
 
